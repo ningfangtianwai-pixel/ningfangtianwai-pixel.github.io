@@ -1,15 +1,17 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const liveBaseUrl = process.env.BASE_URL;
+
 export default defineConfig({
   testDir: './tests',
   outputDir: './test-results',
   reporter: 'line',
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    baseURL: liveBaseUrl || 'http://127.0.0.1:4173',
     colorScheme: 'dark',
     screenshot: 'only-on-failure',
   },
-  webServer: {
+  webServer: liveBaseUrl ? undefined : {
     command: 'npm run preview -- --host 127.0.0.1',
     port: 4173,
     reuseExistingServer: true,
