@@ -25,7 +25,7 @@ async function revealWholePage(page) {
 test('home communicates positioning, evidence, and projects', async ({ page }, testInfo) => {
   await page.goto('/#/');
   await expect(page.getByRole('heading', { name: /把 AI 做进/ })).toBeVisible();
-  const reelHeading = page.getByRole('heading', { name: /30 秒，看见产品/ });
+  const reelHeading = page.getByRole('heading', { name: /30 秒，穿过三个/ });
   await reelHeading.scrollIntoViewIfNeeded();
   await expect(reelHeading).toBeVisible();
   for (const text of ['600+', 'AI 猎头人才寻访工作站', '企业数字资产智能评估系统', 'Project D AI 智能桌面 Agent']) {
@@ -33,11 +33,11 @@ test('home communicates positioning, evidence, and projects', async ({ page }, t
     await target.scrollIntoViewIfNeeded();
     await expect(target).toBeVisible();
   }
-  await expect(page.locator('video source[src$="Manny-Product-Proof-Reel.mp4"]')).toHaveCount(1);
+  await expect(page.locator('video source[src*="Manny-Product-Proof-Reel.mp4"]')).toHaveCount(1);
   const reel = page.getByLabel('Manny 三个旗舰 AI 产品的 30 秒产品视频');
   await reel.scrollIntoViewIfNeeded();
   await expect.poll(async () => reel.evaluate(video => Number.isFinite(video.duration) ? video.duration : 0)).toBeGreaterThan(29);
-  await expect(page.getByRole('link', { name: '查看 GIF' })).toHaveAttribute('href', /Manny-Product-Proof-Reel\.gif$/);
+  await expect(page.getByRole('link', { name: '查看 GIF' })).toHaveAttribute('href', /Manny-Product-Proof-Reel\.gif\?v=2$/);
   await expectNoHorizontalOverflow(page);
   await revealWholePage(page);
   await page.screenshot({ path: `test-results/${testInfo.project.name}-home.png`, fullPage: true });
