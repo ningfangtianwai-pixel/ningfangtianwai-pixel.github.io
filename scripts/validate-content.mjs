@@ -30,4 +30,15 @@ if (!existsSync(resumePdf) || statSync(resumePdf).size < 100_000) {
   process.exit(1);
 }
 
-console.log('Content validation passed: 6 projects and verified public evidence are present.');
+const productVideo = new URL('../public/media/Manny-Product-Proof-Reel.mp4', import.meta.url);
+const productGif = new URL('../public/media/Manny-Product-Proof-Reel.gif', import.meta.url);
+if (!existsSync(productVideo) || statSync(productVideo).size < 1_000_000) {
+  console.error('Content validation failed. The 30-second product reel is missing or unexpectedly small.');
+  process.exit(1);
+}
+if (!existsSync(productGif) || statSync(productGif).size < 500_000) {
+  console.error('Content validation failed. The product demo GIF is missing or unexpectedly small.');
+  process.exit(1);
+}
+
+console.log('Content validation passed: 6 projects, verified evidence, resume PDF, product video, and GIF are present.');

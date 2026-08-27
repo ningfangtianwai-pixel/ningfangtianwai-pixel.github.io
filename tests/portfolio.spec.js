@@ -8,14 +8,38 @@ async function expectNoHorizontalOverflow(page) {
   expect(sizes.page).toBeLessThanOrEqual(sizes.viewport + 1);
 }
 
+async function revealWholePage(page) {
+  const { height, viewport } = await page.evaluate(() => ({
+    height: document.documentElement.scrollHeight,
+    viewport: window.innerHeight,
+  }));
+  const step = Math.max(320, Math.floor(viewport * 0.72));
+  for (let top = 0; top < height; top += step) {
+    await page.evaluate(nextTop => window.scrollTo(0, nextTop), top);
+    await page.waitForTimeout(90);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(850);
+}
+
 test('home communicates positioning, evidence, and projects', async ({ page }, testInfo) => {
   await page.goto('/#/');
   await expect(page.getByRole('heading', { name: /把 AI 做进/ })).toBeVisible();
-  await expect(page.getByText('600+', { exact: true }).first()).toBeVisible();
-  await expect(page.getByText('AI 猎头人才寻访工作站', { exact: true })).toBeVisible();
-  await expect(page.getByText('企业数字资产智能评估系统', { exact: true })).toBeVisible();
-  await expect(page.getByText('Project D AI 智能桌面 Agent', { exact: true })).toBeVisible();
+  const reelHeading = page.getByRole('heading', { name: /30 秒，看见产品/ });
+  await reelHeading.scrollIntoViewIfNeeded();
+  await expect(reelHeading).toBeVisible();
+  for (const text of ['600+', 'AI 猎头人才寻访工作站', '企业数字资产智能评估系统', 'Project D AI 智能桌面 Agent']) {
+    const target = page.getByText(text, { exact: true }).first();
+    await target.scrollIntoViewIfNeeded();
+    await expect(target).toBeVisible();
+  }
+  await expect(page.locator('video source[src$="Manny-Product-Proof-Reel.mp4"]')).toHaveCount(1);
+  const reel = page.getByLabel('Manny 三个旗舰 AI 产品的 30 秒产品视频');
+  await reel.scrollIntoViewIfNeeded();
+  await expect.poll(async () => reel.evaluate(video => Number.isFinite(video.duration) ? video.duration : 0)).toBeGreaterThan(29);
+  await expect(page.getByRole('link', { name: '查看 GIF' })).toHaveAttribute('href', /Manny-Product-Proof-Reel\.gif$/);
   await expectNoHorizontalOverflow(page);
+  await revealWholePage(page);
   await page.screenshot({ path: `test-results/${testInfo.project.name}-home.png`, fullPage: true });
 });
 
