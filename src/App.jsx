@@ -75,7 +75,7 @@ function About() {
 }
 
 function Contact() {
-  return <section className="contact" id="contact"><span>04 / 联系</span><h2>一起做点真正<br/>进入工作的 AI。</h2><p>欢迎交流 AI 产品、Agent、企业工作流与业务自动化。</p><div><a className="button light" href={GITHUB} target="_blank" rel="noreferrer"><Icon name="github"/> GitHub Profile</a><a className="button line" href="#/resume">查看履历 <Icon name="arrow"/></a></div></section>;
+  return <section className="contact" id="contact"><span>04 / 联系</span><h2>一起做点真正<br/>进入工作的 AI。</h2><p>欢迎交流 AI 产品、Agent、企业工作流与业务自动化。</p><div className="contact-channels"><a href="mailto:3439536203@qq.com"><small>EMAIL</small><strong>3439536203@qq.com</strong></a><a href="mailto:ningfangtianwai@gmail.com"><small>EMAIL</small><strong>ningfangtianwai@gmail.com</strong></a><span><small>QQ</small><strong>3439536203</strong></span></div><div className="contact-actions"><a className="button light" href={GITHUB} target="_blank" rel="noreferrer"><Icon name="github"/> GitHub Profile</a><a className="button line" href="#/resume">查看履历 <Icon name="arrow"/></a></div></section>;
 }
 
 function Footer() {
@@ -116,7 +116,7 @@ function DemoPage({ project }) {
 
 function Resume() {
   const flagship = projects.filter(item => item.flagship);
-  return <><Header compact/><main className="resume"><section className="resume-head"><a className="back" href="#/"><Icon name="back"/> 返回作品集</a><div><span>Manny · AI Product Builder</span><button onClick={() => window.print()}><Icon name="download"/> 打印 / 保存 PDF</button></div><h1>把 AI 做进真实工作里。</h1><p>AI Agent · 业务自动化 · 企业智能工作流 · AI 产品落地</p></section><section className="resume-intro"><h2>简介</h2><p>围绕招聘、企业评估、桌面工具与个人效率场景，设计并实现 AI 工作流、Agent、规则引擎与长期记忆系统。强调业务链路、人工决策边界和真实结果。</p></section><section className="resume-results"><h2>真实结果</h2><div>{metrics.map(item => <article key={item.label}><strong>{item.value}</strong><span>{item.label}</span></article>)}</div></section><section className="resume-projects"><h2>旗舰项目</h2>{flagship.map(project => <article key={project.slug}><span>{project.number} · {project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><ul>{project.evidence.slice(0,3).map(item => <li key={item.label}><b>{item.value}</b> {item.label}</li>)}</ul></article>)}</section></main></>;
+  return <><Header compact/><main className="resume"><section className="resume-head"><a className="back" href="#/"><Icon name="back"/> 返回作品集</a><div><span>Manny · AI Product Builder</span><div className="resume-actions"><a className="resume-download" href="/Manny-AI-Product-Resume.pdf" download><Icon name="download"/> 下载项目简历 PDF</a><button onClick={() => window.print()}>打印网页版</button></div></div><h1>把 AI 做进真实工作里。</h1><p>AI Agent · 业务自动化 · 企业智能工作流 · AI 产品落地</p></section><section className="resume-intro"><h2>简介</h2><p>2004 年生。围绕招聘、企业评估、桌面工具与个人效率场景，设计并实现 AI 工作流、Agent、规则引擎与长期记忆系统。强调业务链路、人工决策边界和真实结果。</p></section><section className="resume-results"><h2>真实结果</h2><div>{metrics.map(item => <article key={item.label}><strong>{item.value}</strong><span>{item.label}</span></article>)}</div></section><section className="resume-projects"><h2>旗舰项目</h2>{flagship.map(project => <article key={project.slug}><span>{project.number} · {project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><ul>{project.evidence.slice(0,3).map(item => <li key={item.label}><b>{item.value}</b> {item.label}</li>)}</ul></article>)}</section></main></>;
 }
 
 function NotFound() {

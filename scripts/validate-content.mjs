@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 
 const source = readFileSync(new URL('../src/data.js', import.meta.url), 'utf8');
 const requiredProjects = [
@@ -21,6 +21,12 @@ const forbiddenClaims = [/github stars?/i, /客户收入/i, /融资金额/i, /�
 const forbidden = forbiddenClaims.filter((pattern) => pattern.test(source));
 if (forbidden.length) {
   console.error(`Content validation failed. Review unsupported claims: ${forbidden.join(', ')}`);
+  process.exit(1);
+}
+
+const resumePdf = new URL('../public/Manny-AI-Product-Resume.pdf', import.meta.url);
+if (!existsSync(resumePdf) || statSync(resumePdf).size < 100_000) {
+  console.error('Content validation failed. Generated resume PDF is missing or unexpectedly small.');
   process.exit(1);
 }
 

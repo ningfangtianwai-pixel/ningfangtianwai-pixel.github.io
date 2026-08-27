@@ -125,7 +125,12 @@ img { display: block; max-width: 100%; }
 .contact > span { color: var(--lime); font: 600 10px ui-monospace, monospace; }
 .contact h2 { font-size: clamp(46px, 6vw, 76px); line-height: 1.03; letter-spacing: -.055em; margin: 32px 0 18px; position: relative; z-index: 1; }
 .contact p { color: #aab4a9; font-size: 14px; }
-.contact > div { display: flex; gap: 12px; margin-top: 30px; position: relative; z-index: 1; }
+.contact > div { position: relative; z-index: 1; }
+.contact-channels { display: grid; grid-template-columns: 1fr 1fr .7fr; gap: 8px; max-width: 820px; margin-top: 28px; }
+.contact-channels > * { min-width: 0; padding: 12px 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 8px; background: rgba(255,255,255,.025); color: #e9eee8; }
+.contact-channels small { display: block; margin-bottom: 6px; color: var(--lime); font: 700 8px ui-monospace, monospace; letter-spacing: .08em; }
+.contact-channels strong { display: block; overflow-wrap: anywhere; font-size: 12px; font-weight: 500; }
+.contact-actions { display: flex; gap: 12px; margin-top: 16px; }
 
 footer { max-width: var(--max); margin: 0 auto; padding: 32px 28px 48px; display: flex; align-items: center; justify-content: space-between; color: var(--muted-2); font-size: 11px; }
 footer > div { display: flex; gap: 20px; }
@@ -334,7 +339,10 @@ footer > div { display: flex; gap: 20px; }
 .resume { max-width: 960px; }
 .resume-head { border-bottom: 1px solid var(--line); padding-bottom: 40px; }
 .resume-head > div { margin-top: 50px; display: flex; justify-content: space-between; align-items: center; color: var(--lime); font-size: 11px; }
-.resume-head button { background: transparent; color: #cbd2c9; border: 1px solid var(--line); border-radius: 7px; padding: 9px 12px; display: flex; gap: 8px; }
+.resume-actions { display: flex; align-items: center; gap: 8px; }
+.resume-head button, .resume-download { color: #cbd2c9; border: 1px solid var(--line); border-radius: 7px; padding: 9px 12px; display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.resume-head button { background: transparent; }
+.resume-download { background: var(--lime); color: #10180f; border-color: var(--lime); }
 .resume-head h1 { font-size: 56px; margin: 26px 0 12px; }
 .resume-head > p { color: var(--muted); }
 .resume-intro, .resume-results, .resume-projects { padding: 36px 0; border-bottom: 1px solid var(--line); }
@@ -404,7 +412,8 @@ footer > div { display: flex; gap: 20px; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
   .about-grid > h2 { font-size: 34px; }
   .contact { margin: 0 14px 16px; min-height: 390px; padding: 44px 24px; }
-  .contact > div { flex-wrap: wrap; }
+  .contact-channels { grid-template-columns: 1fr; }
+  .contact-actions { flex-wrap: wrap; }
   footer { padding: 26px 18px 40px; flex-wrap: wrap; gap: 20px; }
   footer > p { order: 3; width: 100%; }
   .case-page, .demo-page, .simple-case, .resume { padding: 35px 18px 80px; }
@@ -465,7 +474,7 @@ footer > div { display: flex; gap: 20px; }
 
 @media print {
   body { background: white; color: black; }
-  .site-header, .resume-head .back, .resume-head button { display: none; }
+  .site-header, .resume-head .back, .resume-actions { display: none; }
   .resume { max-width: none; padding: 0; }
   .resume * { color: black !important; border-color: #ccc !important; }
 }

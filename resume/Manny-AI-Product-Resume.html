@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manny · AI 产品项目简历</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #dfe4df; color: #111814; font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; }
+    body { padding: 18px 0; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto 18px; padding: 14mm 15mm 13mm; background: #fff; position: relative; page-break-after: always; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+    .brand { display: flex; align-items: center; gap: 10px; font: 700 9px/1.2 ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: #536158; }
+    .mark { width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; background: #b7f768; color: #132014; font: italic 800 17px/1 Georgia, serif; letter-spacing: 0; }
+    .top { display: grid; grid-template-columns: 1.35fr .9fr; gap: 28px; padding: 18px 0 16px; border-bottom: 1px solid #dce3dd; }
+    h1 { margin: 0; font-size: 33px; line-height: 1; letter-spacing: -.04em; }
+    .role { margin: 9px 0 0; color: #257557; font-size: 13px; font-weight: 700; }
+    .tagline { margin: 8px 0 0; color: #5e6c63; font-size: 10px; line-height: 1.65; }
+    .contacts { padding-top: 1px; font-size: 9.4px; line-height: 1.9; color: #37453c; }
+    .contacts a { color: inherit; text-decoration: none; }
+    .contacts b { display: inline-block; width: 42px; color: #78837c; font-size: 8px; text-transform: uppercase; }
+    .section { margin-top: 15px; }
+    .section-title { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; color: #257557; font: 800 9px/1 ui-monospace, monospace; letter-spacing: .11em; text-transform: uppercase; }
+    .section-title::after { content: ""; height: 1px; flex: 1; background: #dce3dd; }
+    .profile { margin: 0; color: #38463d; font-size: 10.2px; line-height: 1.75; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #dce3dd; border-radius: 8px; overflow: hidden; }
+    .metric { padding: 10px 11px; border-right: 1px solid #dce3dd; }
+    .metric:last-child { border: 0; }
+    .metric strong { display: block; font-size: 18px; line-height: 1; color: #1d6e51; }
+    .metric span { display: block; margin-top: 6px; color: #637068; font-size: 7.6px; line-height: 1.4; }
+    .project { padding: 10px 0 9px; border-top: 1px solid #e7ece8; break-inside: avoid; }
+    .project:first-of-type { border-top: 0; padding-top: 0; }
+    .project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; }
+    .project h2 { margin: 0; font-size: 13px; letter-spacing: -.02em; }
+    .project .meta { flex: none; color: #257557; font: 700 7.6px/1.2 ui-monospace, monospace; }
+    .project .intro { margin: 5px 0 4px; color: #4b5950; font-size: 9px; line-height: 1.55; }
+    ul { margin: 5px 0 0; padding-left: 15px; }
+    li { margin: 2.8px 0; color: #26332b; font-size: 8.7px; line-height: 1.5; }
+    li::marker { color: #66a541; }
+    .tags { margin-top: 6px; color: #68746c; font: 600 7.4px/1.4 ui-monospace, monospace; }
+    .page-number { position: absolute; right: 15mm; bottom: 7mm; color: #8d9891; font: 700 7px/1 ui-monospace, monospace; }
+    .page-two-head { display: flex; justify-content: space-between; align-items: flex-end; padding: 18px 0 12px; border-bottom: 1px solid #dce3dd; }
+    .page-two-head h2 { margin: 0; font-size: 21px; letter-spacing: -.035em; }
+    .page-two-head span { color: #748078; font-size: 8px; }
+    .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; }
+    .compact-project { padding: 11px 0; border-bottom: 1px solid #e7ece8; break-inside: avoid; }
+    .compact-project h3 { margin: 0; font-size: 12px; }
+    .compact-project p { margin: 5px 0; color: #455249; font-size: 8.7px; line-height: 1.6; }
+    .compact-project ul { margin-top: 4px; }
+    .skills { display: grid; gap: 7px; }
+    .skill { padding: 9px 10px; border: 1px solid #dce3dd; border-radius: 7px; }
+    .skill b { display: block; font-size: 9px; color: #1d6e51; }
+    .skill p { margin: 4px 0 0; color: #56635b; font-size: 8px; line-height: 1.55; }
+    .method { padding: 12px; border-radius: 8px; background: #142219; color: #eef3ee; }
+    .method h3 { margin: 0 0 8px; color: #b7f768; font-size: 11px; }
+    .method p { margin: 0; color: #c1cbc3; font-size: 8.5px; line-height: 1.7; }
+    .links { display: grid; gap: 6px; }
+    .links a { padding: 8px 9px; border: 1px solid #dce3dd; border-radius: 6px; color: #245f49; font-size: 8px; text-decoration: none; overflow-wrap: anywhere; }
+    .note { color: #7a857d; font-size: 7.4px; line-height: 1.55; }
+    @page { size: A4; margin: 0; }
+    @media print { html, body { background: #fff; } body { padding: 0; } .page { margin: 0; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="brand"><span class="mark">M</span> Manny / AI Product Builder</div>
+    <header class="top">
+      <div>
+        <h1>Manny</h1>
+        <p class="role">AI 产品设计 · Agent · 业务自动化 · 全栈应用开发</p>
+        <p class="tagline">把 AI 从对话工具，转化为进入真实业务流程、可执行、可复核并产生结果的产品。</p>
+      </div>
+      <div class="contacts">
+        <div><b>出生</b>2004 年</div><div><b>QQ</b>3439536203</div>
+        <div><b>邮箱</b><a href="mailto:3439536203@qq.com">3439536203@qq.com</a></div>
+        <div><b>邮箱</b><a href="mailto:ningfangtianwai@gmail.com">ningfangtianwai@gmail.com</a></div>
+        <div><b>GitHub</b><a href="https://github.com/ningfangtianwai-pixel">ningfangtianwai-pixel</a></div>
+      </div>
+    </header>
+    <section class="section"><div class="section-title">Profile / 个人简介</div><p class="profile">围绕招聘、企业评估、桌面工具、内容运营和个人效率场景，独立完成 AI 产品定义、业务流程拆解、原型设计、LLM 工作流、规则引擎与全栈 MVP。重视数据边界、人工确认、异常恢复和真实结果验证，能够使用 AI 编程工具快速把业务需求推进为可运行产品。</p></section>
+    <section class="section"><div class="section-title">Evidence / 代表性结果</div><div class="metrics">
+      <div class="metric"><strong>600+</strong><span>候选人简历检索与分析任务</span></div><div class="metric"><strong>60+</strong><span>建立有效业务联系的候选人</span></div><div class="metric"><strong>10+</strong><span>成功预约真实企业面试</span></div><div class="metric"><strong>176</strong><span>企业评估数据契约字段</span></div>
+    </div></section>
+    <section class="section"><div class="section-title">Featured Projects / 旗舰项目</div>
+      <article class="project"><div class="project-head"><h2>企业数字资产智能评估系统</h2><span class="meta">AI PRODUCT / FULL-STACK / RULE ENGINE</span></div><p class="intro">面向企业数字化经营评估，将分散的工商、财税、知识产权和经营信息转换为可解释、可复查的结构化结果。</p><ul>
+        <li>设计并冻结 176 字段数据契约：75 个原始字段、78 个派生字段、23 个评估字段。</li><li>建立 5 个加权评估模块和 8 个独立全局风险闸门，避免单一总分掩盖重大风险。</li><li>完成“数据输入 → 标准化 → 规则计算 → 综合评分 → 风险识别 → 改进建议”产品链路。</li><li>负责指标体系、规则逻辑、Schema、产品原型及前后端 MVP 设计，并规划外部企业数据接口。</li>
+      </ul><div class="tags">Rule Engine · Enterprise Data · Data Standardization · API Integration · AI Product</div></article>
+      <article class="project"><div class="project-head"><h2>TalentFlow · AI 猎头人才寻访工作站</h2><span class="meta">LLM WORKFLOW / RECRUITMENT AUTOMATION</span></div><p class="intro">将 JD 澄清、岗位画像、搜索策略、候选人分析、沟通话术和推荐报告连接成 7 步人机协同工作流。</p><ul>
+        <li>通过 LLM 提取工作经历、教育、行业与项目证据，输出匹配度、优势、风险点和建议追问。</li><li>将传统逐份阅读转化为“批量解析 → 自动评价 → 人工复核”，并以顾问确认作为最终动作边界。</li><li>累计完成 600+ 次检索分析、联系 60+ 位候选人，促成 10+ 场真实企业面试。</li><li>使用 React、TypeScript、Hono 与 SQLite 完成本地优先 MVP，并接入可替换 LLM Provider。</li>
+      </ul><div class="tags">Resume Parsing · Prompt Engineering · Information Extraction · Human in the Loop</div></article>
+      <article class="project"><div class="project-head"><h2>Project D · AI 智能桌面 Agent</h2><span class="meta">DESKTOP AGENT / TOOL CALLING / LOCAL-FIRST</span></div><p class="intro">连接自然语言、桌面文件和 Windows 系统环境，使 AI 从聊天界面转变为有计划、有确认和可恢复的个人工作空间。</p><ul>
+        <li>实现本地搜索、桌面整理预览、文件夹门户、场景、恢复中心、壁纸、天气和桌宠等能力。</li><li>采用 Plan-first：真实桌面操作前展示目标、冲突与影响范围，用户确认后执行并保留恢复日志。</li><li>基于 Electron、Vue 3 与 TypeScript 构建；内部 Beta 通过 167/167 自动化测试和打包运行验证。</li>
+      </ul><div class="tags">Electron · Vue · TypeScript · Desktop Automation · Recovery · Privacy</div></article>
+    </section><span class="page-number">01 / 02</span>
+  </section>
+
+  <section class="page">
+    <div class="brand"><span class="mark">M</span> Manny / AI Product Builder</div>
+    <header class="page-two-head"><h2>更多项目与能力</h2><span>Project Resume · Updated 2026.08</span></header>
+    <div class="two-col"><div><section class="section"><div class="section-title">More Projects / 项目经历</div>
+      <article class="compact-project"><h3>企业级多平台矩阵运营自动化控制台</h3><p>面向小红书、抖音、视频号、快手等内容平台，把账号、素材、生产、审核、发布、评论检测和线索筛选汇总到统一工作流。</p><ul><li>抽象内容生产、审核、发布与运营状态，减少跨平台重复操作。</li><li>规划 AI 选题、标题、文案和素材能力，以及 API、浏览器自动化与 Agent 执行接口。</li><li>设计评论持续分析与意向线索识别，将人工逐条查看转变为自动检测和重点筛选。</li></ul><div class="tags">Workflow Automation · AI Content · Browser Automation · Lead Detection</div></article>
+      <article class="compact-project"><h3>Manny Personal Workspace</h3><p>个人 AI 工作台 Demo，将热点资讯、财务、便签、任务、日志和提醒集中到统一界面。</p><ul><li>搭建“信息采集 → 数据处理 → AI 总结 → 自动推送”的个人自动化流程。</li><li>通过 MCP / Tool Calling 探索模型与外部服务、本地工具和任务调度的连接。</li></ul><div class="tags">MCP · Personal Agent · Information Aggregation · Task Scheduling</div></article>
+      <article class="compact-project"><h3>长期记忆型 AI 陪伴系统</h3><p>面向长期连续交互，研究角色一致性、多轮上下文、长期记忆和个性化响应机制。</p><ul><li>设计多层 Prompt 架构，拆分角色、规则、状态与当前用户上下文。</li><li>提取、存储并按需召回重要信息，在 Token 成本和跨会话连续性之间做权衡。</li></ul><div class="tags">Conversational AI · Memory · Prompt Engineering · Context Management</div></article>
+    </section></div><aside>
+      <section class="section"><div class="section-title">Capabilities / 核心能力</div><div class="skills">
+        <div class="skill"><b>业务流程拆解</b><p>从真实重复劳动、信息断点和决策边界出发定义产品流程与 MVP。</p></div><div class="skill"><b>AI 产品与 LLM Workflow</b><p>Prompt 架构、信息抽取、结构化输出、Provider 接入和人工确认。</p></div><div class="skill"><b>规则与数据产品</b><p>字段标准化、指标体系、评分规则、风险闸门与可解释结果。</p></div><div class="skill"><b>Agent 与工具调用</b><p>Tool Calling、MCP、本地工具、执行计划、恢复机制和上下文管理。</p></div><div class="skill"><b>全栈 MVP</b><p>React / Vue / TypeScript / Node.js / Hono / Electron / SQLite。</p></div>
+      </div></section>
+      <section class="section"><div class="method"><h3>我的产品方法</h3><p>业务问题 → 结构化上下文 → AI 推理或规则计算 → 工具执行 → 人工决策 → 可验证结果。</p></div></section>
+      <section class="section"><div class="section-title">Links / 作品链接</div><div class="links"><a href="https://ningfangtianwai-pixel.github.io/">ningfangtianwai-pixel.github.io</a><a href="https://github.com/ningfangtianwai-pixel">github.com/ningfangtianwai-pixel</a><a href="https://github.com/ningfangtianwai-pixel/talentflow-showcase">TalentFlow Showcase</a><a href="https://github.com/ningfangtianwai-pixel/project-d-desktop">Project D Source</a></div></section>
+      <section class="section"><p class="note">说明：本简历中的业务结果采用聚合口径，不公开候选人简历、联系方式、客户内部材料或本地数据库。交互 Demo 使用匿名样例数据。</p></section>
+    </aside></div><span class="page-number">02 / 02</span>
+  </section>
+</body>
+</html>

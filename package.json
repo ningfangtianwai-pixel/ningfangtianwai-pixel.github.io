@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "check": "node scripts/validate-content.mjs && npm run build",
     "test:e2e": "playwright test",
-    "capture:cases": "node scripts/capture-case-assets.mjs"
+    "capture:cases": "node scripts/capture-case-assets.mjs",
+    "generate:resume": "node scripts/generate-resume-pdf.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
