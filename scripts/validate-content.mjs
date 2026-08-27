@@ -9,7 +9,7 @@ const requiredProjects = [
   'Manny Personal Workspace',
   '长期记忆型 AI 系统',
 ];
-const requiredFacts = ['600+', '60+', '10+', '200+', "value: '3'", "value: '19'"];
+const requiredFacts = ['600+', '60+', '10+', "value: '176'", "value: '5'", "value: '8'", '75 / 78 / 23'];
 
 const missing = [...requiredProjects, ...requiredFacts].filter((value) => !source.includes(value));
 if (missing.length) {
@@ -24,4 +24,4 @@ if (forbidden.length) {
   process.exit(1);
 }
 
-console.log('Content validation passed: 6 projects and all supplied result metrics are present.');
+console.log('Content validation passed: 6 projects and verified public evidence are present.');
