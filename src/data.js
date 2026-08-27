@@ -31,6 +31,8 @@ export const projects = [
       { src: '/cases/talentflow/workflow.png', alt: 'TalentFlow JD 追问工作流', caption: '真实运行界面：JD 追问、岗位画像、招聘文案与搜索关键词。' },
     ],
     demo: { href: '#/demo/talentflow', label: '体验产品流程 Demo', note: '使用示例职位，不连接真实候选人数据或外部 LLM。' },
+    repo: 'https://github.com/ningfangtianwai-pixel/talentflow-showcase',
+    repoLabel: 'Showcase Repo',
     tags: ['LLM Workflow', 'Resume Parsing', 'Human in the loop'],
   },
   {
