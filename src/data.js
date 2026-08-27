@@ -60,6 +60,8 @@ export const projects = [
       { src: '/cases/enterprise-evaluation/rules.png', alt: '企业评估规则证据页', caption: '交互 Demo：字段分层、规则覆盖与全局风险闸门。' },
     ],
     demo: { href: '#/demo/enterprise-evaluation', label: '打开评估系统 Demo', note: '真实规则结构，匿名示例数据；不代表正式企业评估结论。' },
+    repo: 'https://github.com/ningfangtianwai-pixel/enterprise-evaluation-showcase',
+    repoLabel: 'Showcase Repo',
     tags: ['Rule Engine', 'Data Contract', 'Risk Gates'],
   },
   {
